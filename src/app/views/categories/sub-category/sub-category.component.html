@@ -1,0 +1,101 @@
+<app-pageloader *ngIf="isLoading" ></app-pageloader>
+<div class="card">
+    <div class="card-body shadow">
+        <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+            <div class="row m-3">
+                <div class="col-md-4">
+                    <label class="labelmargin">Select Category</label>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-control" formControlName="categoryId">
+                        <option value="">--select option--</option>
+                        <option *ngFor="let x of categoryDropdown" [value]="x.id">{{x.name}}</option>
+                    </select>
+                    <div *ngIf="categoryForm.get('categoryId').invalid && (categoryForm.get('categoryId').dirty || categoryForm.get('categoryId').touched)">
+                        <div class="text-danger">
+                            <div
+                                *ngIf="categoryForm.get('categoryId').errors.required || categoryForm.get('categoryId').errors.touched">
+                                Please select a category
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-md-4">
+                    <label>Sub Category</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" id="" class="form-control" formControlName="subcategory"
+                        placeholder="Enter name" checkedoutForm.required>
+                        <div *ngIf="categoryForm.get('subcategory').invalid && (categoryForm.get('subcategory').dirty || categoryForm.get('subcategory').touched)">
+                        <div class="text-danger">
+                            <div
+                                *ngIf="categoryForm.get('subcategory').errors.required || categoryForm.get('subcategory').errors.touched">
+                                Sub category name is required.
+                            </div>
+                            <div *ngIf="categoryForm.get('subcategory').errors.maxlength">Sub-Category must
+                                be 30 characters or less.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-md-4">
+                    <label>Description</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" id="" class="form-control" formControlName="description" placeholder="eg: write description">
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus" aria-hidden="true"></i>
+                        Add sub-category</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div><br>
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <!-- <th scope="col">Icon</th> -->
+                    <th scope="col">Created</th>
+                    <th scope="col">Updated</th>
+                    <th scope="col">Status</th>
+
+                    <th><i class="fa fa-pencil-square-o text-primary" aria-hidden="true"></i></th>
+                    <th style="color:red"><i class="fa fa-trash" aria-hidden="true"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let x of subCategoryList index as i">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{x.name}}</td>
+                    <td>{{x.categoryName}}</td>
+                    <!-- <td>{{x.icon}}</td> -->
+                    <td>{{x.createdOn | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{x.updatedOn | date: 'dd/MM/yyyy'}}</td>
+
+                    <td *ngIf="x.isActive else deactive">
+                        <p class="btn btn-outline-success btn-sm" (click)="activateSubCategory(x.id)">Activated</p>
+                    </td>
+                    <ng-template #deactive>
+                        <td>
+                            <p class="btn btn-outline-danger btn-sm" (click)="activateSubCategory(x.id)">Deactive
+                            </p>
+                        </td>
+                    </ng-template>
+                    <td ><i class="fa fa-pencil-square-o text-primary "
+                            aria-hidden="true"></i></td>
+                    <td style="color:red" (click)="deleteSubCategory(x.id)"><i  class="fa fa-trash"
+                            aria-hidden="true" ></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
