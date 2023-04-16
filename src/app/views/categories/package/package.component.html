@@ -1,0 +1,64 @@
+<div class="card" >
+    <div class="card-body">
+        <form [formGroup]="checkoutForm" (change)="selectedOption()">
+
+            <div class="col-md-4">
+                <label><b>Plans</b></label>
+                <select class="form-control" formControlName="categoryId">
+                    <option value="" >--select a plan--</option>
+                    <option *ngFor="let x of categoryDropdown" [value]="x.categoryId">{{x.name}}</option>
+                </select>
+            </div>
+        </form>
+    </div>
+</div><br>
+<div *ngIf="packageList != null else selectCategory"  class="card" >
+    <div class="card-body ">
+        <div *ngFor="let x of packageList" class="container mb-5 mt-5">
+            <div class="pricing card-deck flex-column flex-md-row mb-3" >
+                <div class="card card-pricing text-center px-3 mb-4 shadow">
+                    <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">{{x.plan}}</span>
+                    <div class="bg-transparent card-header pt-4 border-0">
+                        <h3 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="15">$<span class="price">12</span><span class="h6 text-muted ml-2">/ per month</span></h3>
+                    </div>
+                    <div class="card-body pt-0">
+                        <ul *ngFor="let y of x.features" class="list-unstyled mb-4">
+                            <li>{{y.name}}</li>
+                     
+                        </ul>
+                        <button type="button" class="btn btn-outline-secondary mb-3 hvr">Order now</button>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <!-- <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Second</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let x of packageList index as i">
+
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{x.plan}}</td>
+                    <td *ngFor="let y of x.features">
+                     <li>{{y.name}}</li>
+                    </td>
+                    <!-- <td>{{x.createdOnUtc | date: 'dd/MM/yyyy'}}</td> -->
+                    <!-- <td>{{x.modifiedOnUtc | date: 'dd/MM/yyyy'}}</td> -->
+                <!-- </tr>
+            </tbody>
+        </table>  -->
+    </div>
+</div>
+<ng-template #selectCategory >
+<div class="card">
+    <h4 class="text-center">Please select a plan from dropdown </h4>
+</div>
+</ng-template>

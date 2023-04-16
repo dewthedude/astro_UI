@@ -1,0 +1,389 @@
+<app-layout></app-layout>
+
+<body id="page-top">
+
+    <ngb-carousel>
+        <ng-template ngbSlide>
+            <header class="masthead">
+                <!-- <div class="container px-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6">
+
+                            <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                                <h3 class="display-1 lh-1 mb-3 text-custom">Grow your social account</h3>
+                                <h1 class="lh-1 mb-3 text-custom">at the click of a button.</h1>
+                                <div class="d-flex flex-column col-md-6 customMargin">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="d-flex flex-column col-md-6" style="margin-top:10px;">
+                                    <button class="btn btn-outline-info rounded-pill" >Get it now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> -->
+            </header>
+        </ng-template>
+        <ng-template ngbSlide>
+            <header class="secondslide">
+
+            </header>
+        </ng-template>
+        <ng-template ngbSlide>
+            <header class="masthead">
+
+            </header>
+        </ng-template>
+
+    </ngb-carousel>
+    <section>
+        <div class="text-center">
+            <h4 class="text-black">If you have any questions about our Returns and Refunds Policy, please contact us
+            </h4>
+            <br>
+        </div>
+        <div class="card-body justify-content-center">
+
+            <div class="container mb-5 mt-5 row d-flex justify-content-center " style=" margin-left: 50px;" #mySection>
+
+                <div class="pricing card-deck flex-column flex-md-row mb-3 col-xl-4 " *ngFor="let plan of plans">
+                    <div style="background-color:whitesmoke;" class="card card-pricing text-center px-3 mb-4 shadow">
+                        <span class="h3 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm"><i
+                                class="fa fa-thumbs-up mx-3"></i>{{plan.plan}}</span>
+                        <div class="bg-transparent card-header pt-4 border-0">
+                            <h4 class="h2 font-weight-normal text-primary text-center mb-0" data-pricing-value="15">
+                                <span class="h6 text-muted ml-2">starting at</span> $<span class="">12</span>
+                            </h4>
+                        </div>
+                        <div class="card-body pt-0">
+                            <ul class="list-unstyled mb-4" *ngFor="let x of plan.features">
+                                <li><span class="fa fa-cart-plus text-primary mx-2"></span> {{x.name}}</li>
+
+                            </ul>
+
+                        </div>
+                        <div class="col-xl-12">
+                            <select class="form-control text-center bg-primary text-white-50">
+                                <option class="text-center">--Choose an option--</option>
+                                <option value="">100 Likes</option>
+                                <option>500 likes and followers</option>
+                                <option>1000 likes and followers</option>
+                            </select>
+                            <div class="row mt-3">
+                                <del>
+                                    <h5>2200.00</h5>
+                                </del>
+                                <h3 ><b>1834.00</b></h3>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <button type="button" class="btn btn-outline-primary mb-3 hvr"><i
+                                    class="fa fa-cart-plus px-2" aria-hidden="true"></i> Buy now</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="card-body justify-content-center">
+
+            <hr class="text-primary">
+
+            <div class="container  mb-5 mt-5 row d-flex justify-content-center" style="align-content:center;"
+                #mySection>
+
+                <h2 class="text-center text-primary fw-bold">About us</h2>
+                <div class="row mt-5">
+                    <div class="col-md-6 ">
+
+                        <h2>Get Real followers, likes at the click of a button in minutes</h2>
+                        <h5 class="text-muted mt-5">Social media platforms have the ability to influence millions of
+                            users. Getting active and real followers on any platform will allow you to increase your
+                            network
+                            and boost the digital presence of your brand. We get all this done for you at the click of a
+                            button while you save time and focus on creating awesome content to keep your users engaged.
+                        </h5>
+                    </div>
+                    <div class="col-md-6 pricetree">
+                       
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row d-flex justify-content-center">
+            <hr class="col-xl-10 col-xl-6 col-xl-8 col-xl-4" />
+            <div class="col-xl-5">
+                <ngb-accordion #acc="ngbAccordion">
+                    <ngb-panel id="toggle-1" title="Do I Get Support from Social Hacker?">
+                        <ng-template ngbPanelContent>
+                            Yes, you do. We provide 24X7 service (excluding weekends and public holidays) and are only
+                            an
+                            email away. We understand that you might have a few issues, especially at the beginning if
+                            it
+                            becomes overwhelming to keep up with the traffic. Our team is, therefore, on standby to
+                            attend
+                            to your every need.
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="toggle-2" title="How Does Social Hacker Work?">
+                        <ng-template ngbPanelContent>
+                            Engaging user with social media content can be very demanding. That means engaging with
+                            theirs
+                            as well, and that is where we come in.
+                            <div class="row mx-3">
+                                <p> 1. Choose the desired outcome and complete the payments safely.</p>
+                                <p>
+                                    2. We instantly create advertisements/promotions on various social networks and ad
+                                    networks.
+                                </p>
+                                <p>
+                                    3. From these ads, real interactions/impressions and directed to your profiles or
+                                    content.
+                                </p>
+                                <p> 4. We never use fake (not real) accounts created by any tool or so.
+                                </p>
+                            </div>
+                            This method of creating engagement and building traffic enhances your presence by exposing
+                            you
+                            to other users and bringing them back to your account. We do all the heavy lifting so that
+                            you
+                            can focus on enhancing the quality of your content.
+
+                            Your account does not have to be boring anymore!
+
+                            To enhance your experience with us, we make sure that with every transaction, you are
+                            guaranteed
+                            the following:
+
+                            Quick & Prompt Delivery
+                            You no longer need to worry about likes and comments we ensure the delivery within the
+                            shortest
+                            time after you place your order so that you can channel your energy into creating the best
+                            quality of content and leave the rest to us.
+
+                            Maximum Satisfaction
+                            Your social growth is vital to us, and we will love to establish a lasting relationship with
+                            you. Therefore, we are ready to do what it takes to help you reach your goals. We pride
+                            ourselves in not only delivering on time but making sure you are satisfied with the results.
+
+                            Our Support
+                            We understand how overwhelming managing social media can get, so we are on standby to assist
+                            you
+                            with any issues you may encounter. Whether it concerns your order or the results, do not
+                            hesitate to reach out to us.
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="toggle-3" title="How Long Does It Take To Deliver My Order?">
+                        <ng-template ngbPanelContent>
+                            We start working on your order as soon as we receive it, and within the shortest possible
+                            time,
+                            you should see results. We pay attention to acquiring organic engagement from your Instagram
+                            account so that it is safe. Our focus is on quality rather than on quantity, but you can
+                            monitor
+                            and track your progress. Consistency is a major factor in getting your targets to follow you
+                            and
+                            engage with your content, so it will help to post regular and high-quality content. With
+                            these
+                            things in check, you should see considerable growth within two to three days of your
+                            purchase.
+                            The order will be processed within the first 24 hours after order being placed.
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="toggle-4" title="How many Instagram Followers can I buy for the first time??">
+                        <ng-template ngbPanelContent>
+                            In our experience e-retailers/ newly launched brands on Instagram buy 5,000+ followers for
+                            the
+                            first time. Since over 5000 followers can make a good impression on your account gives you
+                            brand
+                            credibility and confidence to potential buyers. Please note that along with followers it is
+                            important to buy like for multiple posts. This help improve customer confidence.
+                        </ng-template>
+                    </ngb-panel>
+                </ngb-accordion>
+            </div>
+            <div class="col-xl-5">
+                <ngb-accordion #acc="ngbAccordion">
+                    <ngb-panel id="toggle-5" title="Do I Have To Give You My account Password?">
+                        <ng-template ngbPanelContent>
+                            We will never ask you for your password at time during any transactions with us. Even at
+                            anytine, if you are asked for your account password by our customer support staff – please
+                            refrain from doing so.
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="toggle-6" title="Buying followers or likes is legal?">
+                        <ng-template ngbPanelContent>
+                            Of course. Buying followers or likes for any social media is legal. You can think that it is
+                            a
+                            digital marketing strategy. When you buy followers or likes, we promote your account with
+                            social
+                            media ads, etc. It is totally legal and safe.
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="toggle-7" title="If any problem occurs on my purchase?">
+                        <ng-template ngbPanelContent>
+                            If any issues occur in your purchase, <b>you will get a full refund.</b>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="toggle-8" title="Do I get an acknowledgement/ tracking_id of my purchase for future correspondence?
+                ">
+                        <ng-template ngbPanelContent>
+                            Yes. We send you an acknowledgement via e-mail after your order has been approved
+                            automatically.
+                            Hence it is important that you provide us with your email_id so that we can track your order
+                            it
+                            at all required. </ng-template>
+                    </ngb-panel>
+                </ngb-accordion>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="row ">
+            <hr class="col-xl-10 col-xl-6 col-xl-8 col-xl-4" />
+            <div class="col-xl-4 d-flex justify-content-center">
+                <h2 class="mx-2 circle"><i class="fa fa-lightbulb-o text-warning" aria-hidden="true"></i></h2>
+                <h3> Good Quality Assured</h3>
+
+            </div>
+            <div class="col-xl-4 d-flex justify-content-center">
+                <h2 class="mx-2 circle"><i class="fa fa-shield text-danger" aria-hidden="true"></i></h2>
+                <h3> Safety & Privacy Guaranteed</h3>
+            </div>
+            <div class="col-xl-4 d-flex justify-content-center ">
+
+                <h2 class="mx-2 circle"><i class="fa fa-shield text-primary" aria-hidden="true"></i></h2>
+                <h3>24/7 Support</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 d-flex justify-content-center">
+                <div class="col-xl-5">
+                    <h6> All of our services are provided through real users hence we experience a minimal
+                        to near 0% drop rate. However, if a certain account does experience a higher drop
+                        rate we provide you with a top-up. This has helped us maintain a good steady flow of
+                        customers who are loyal to SocialBoost and keep returning to meet their every-growing
+                        social needs.</h6>
+                </div>
+
+            </div>
+            <div class="col-xl-4 d-flex justify-content-center">
+                <div class="col-xl-5">
+                    <h6>We pride ourselves as one of the best when it comes to Privacy and
+                        Safety of the transactions on our platform. We use Paypal & SafeCharge
+                        as your secure payment gateways for all orders. We would never request for
+                        any passwords to any of your social media accounts. All we need is an email
+                        address to send you a notification once the order has been processed. Please
+                        do read our Privacy Policy and Terms and Conditions.</h6>
+                </div>
+            </div>
+            <div class="col-xl-4 d-flex justify-content-center ">
+
+                <div class="col-xl-5">
+                    <h6> we provide you with the best support experience throughout your
+                        association with us, since we believe that boosting your social
+                        presence is an ongoing process and we are always there to reach your
+                        goals. We remain in constant contact with you offering the best and most
+                        advanced tools available. Never hesitate to reach out to us, we are just
+                        a message away..</h6>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="bg-gradient-primary-to-secondary" id="download">
+        <div class="container px-5">
+            <h2 class="text-center text-white font-alt mb-4">Get Real followers, likes at the click of a button in
+                minutes!</h2>
+
+        </div>
+    </section>
+    <footer class="bg-black text-center py-5">
+        <div class="container px-5">
+            <div class="text-white-50 small">
+                <div class="mb-2">&copy; Your Website 2022. All Rights Reserved.</div>
+                <a href="#!">Privacy</a>
+                <span class="mx-1">&middot;</span>
+                <a href="#!">Terms</a>
+                <span class="mx-1">&middot;</span>
+                <a href="#!">FAQ</a>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-gradient-primary-to-secondary p-4">
+                    <h5 class="modal-title font-alt text-white" id="feedbackModalLabel">Send feedback</h5>
+                    <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body border-0 p-4">
+
+                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <!-- Name input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" type="text" placeholder="Enter your name..."
+                                data-sb-validations="required" />
+                            <label for="name">Full name</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        </div>
+                        <!-- Email address input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                                data-sb-validations="required,email" />
+                            <label for="email">Email address</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        </div>
+                        <!-- Phone number input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
+                                data-sb-validations="required" />
+                            <label for="phone">Phone number</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
+                            </div>
+                        </div>
+                        <!-- Message input-->
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" type="text"
+                                placeholder="Enter your message here..." style="height: 10rem"
+                                data-sb-validations="required"></textarea>
+                            <label for="message">Message</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+                            </div>
+                        </div>
+                        <!-- Submit success message-->
+                        <!---->
+                        <!-- This is what your users will see when the form-->
+                        <!-- has successfully submitted-->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">Form submission successful!</div>
+                                To activate this form, sign up at
+                                <br />
+                                <a
+                                    href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                            </div>
+                        </div>
+                        <!-- Submit error message-->
+                        <!---->
+                        <!-- This is what your users will see when there is-->
+                        <!-- an error submitting the form-->
+                        <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3">Error sending message!</div>
+                        </div>
+                        <!-- Submit Button-->
+                        <div class="d-grid"><button class="btn btn-primary rounded-pill btn-lg disabled"
+                                id="submitButton" type="submit">Submit</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
