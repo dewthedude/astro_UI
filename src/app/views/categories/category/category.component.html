@@ -1,0 +1,84 @@
+<app-pageloader *ngIf="isLoading" ></app-pageloader>
+<div class="card">
+    <div class="card-body m-3">
+        <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="labelmargin">Category Name <span class="text-danger">*</span></label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" formControlName="categoryName" placeholder="eg: Mitti">
+                    <div
+                        *ngIf="categoryForm.get('categoryName').invalid && (categoryForm.get('categoryName').dirty || categoryForm.get('categoryName').touched)">
+                        <div class="text-danger">
+                            <div
+                                *ngIf="categoryForm.get('categoryName').errors.required || categoryForm.get('categoryName').errors.touched">
+                                Category name is required.
+                            </div>
+                            <div *ngIf="categoryForm.get('categoryName').errors.maxlength">Category must
+                                be 30 characters or less.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-2">
+                    <label class="labelmargin">Description</label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" formControlName="description" placeholder="paste icon">
+
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus" aria-hidden="true"></i>
+                        Add
+                        category</button>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+</div><br>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Created</th>
+                    <th scope="col">UpdatedOn</th>
+                    <th scope="col">Status</th>
+
+                    <th><i class="fa fa-pencil-square-o text-primary" aria-hidden="true"></i></th>
+                    <th style="color:red"><i class="fa fa-trash" aria-hidden="true"></i></th>
+                </tr>
+            </thead>
+            <tbody style="cursor: default;">
+                <tr *ngFor="let x of categoryList index as i">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{x.name}}</td>
+                    <!-- <td>{{x.icon}}</td> -->
+                    <td>{{x.createdOnUtc | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{x.modifiedOnUtc | date: 'dd/MM/yyyy'}}</td>
+                    <td *ngIf="x.isActive else deactive">
+                        <p  class="btn btn-outline-success btn-sm" (click)="activateCategory(x.id)">Activated</p>
+                    </td>
+                    <ng-template #deactive>
+                        <td>
+                            <p class="btn btn-outline-danger btn-sm" (click)="activateCategory(x.id)">Deactive
+                            </p>
+                        </td>
+                    </ng-template>
+                    <td (click)="editCategory(x.categoryId)"><i class="fa fa-pencil-square-o text-primary "
+                            aria-hidden="true"></i></td>
+                    <td style="color:red" (click)="deleteCategory(x.id)"><i class="fa fa-trash" aria-hidden="true"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

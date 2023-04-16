@@ -1,0 +1,317 @@
+
+
+<app-pageloader *ngIf="isLoading" ></app-pageloader>
+<div class="card">
+    <div class="card-body m-3">
+        <form [formGroup]="productForm" (ngSubmit)="productSubmit()">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label>Category <span style="color:red">*</span></label>
+                        <select class="form-control mt-2" (change)="getSubActiveCategory($event)"
+                            formControlName="categoryId">
+                            <option value="">--Select--</option>
+                            <option *ngFor="let x of categoryList" [value]="x.id">{{x.name}}</option>
+                        </select>
+                        <div
+                            *ngIf="productForm.get('categoryId').invalid && (productForm.get('categoryId').dirty || productForm.get('categoryId').touched)">
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="productForm.get('categoryId').errors.required || productForm.get('categoryId').errors.touched">
+                                    Please select a category
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <label>SubCategory <span style="color:red">*</span></label>
+                        <select class="form-control mt-2" formControlName="subCategoryId">
+                            <option value="">--Select--</option>
+                            <option *ngFor="let x of subCategoryList" [value]="x.id">{{x.name}}</option>
+                        </select>
+                        <div *ngIf="productForm.get('subCategoryId').invalid && (productForm.get('subCategoryId').dirty ||
+                            productForm.get('subCategoryId').touched)">
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="productForm.get('subCategoryId').errors.required || productForm.get('subCategoryId').errors.touched">
+                                    Please select sub category
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <label>Product Name <span style="color:red">*</span></label>
+                        <input type="text" class="form-control mt-2" formControlName="productName"
+                            placeholder="eg: Ganga ki mitti">
+                        <div
+                            *ngIf="productForm.get('productName').invalid && (productForm.get('productName').dirty || productForm.get('productName').touched)">
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="productForm.get('productName').errors.required || productForm.get('productName').errors.touched">
+                                    Sub category name is required.
+                                </div>
+                                <div *ngIf="productForm.get('productName').errors.maxlength">Sub-Category must
+                                    be 30 characters or less.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row mt-3">
+                    <div class="col-lg-3">
+                        <label>Qty <span style="color:red">*</span></label>
+                        <input type="text" class="form-control mt-2" formControlName="qty" placeholder="eg: 10 pcs.">
+                        <div *ngIf="productForm.get('qty').invalid && (productForm.get('qty').dirty ||
+                        productForm.get('qty').touched)">
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="productForm.get('qty').errors.pattern || productForm.get('qty').errors.touched">
+                                    Please enter numbers only
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <label>Price <span style="color:red">*</span></label>
+                        <input type="text" class="form-control mt-2" placeholder="eg: 1000 INR" [(ngModel)]="price"
+                            (ngModelChange)="calculateDiscount()" formControlName="price">
+                        <div *ngIf="productForm.get('price').invalid && (productForm.get('price').dirty ||
+                        productForm.get('price').touched)">
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="productForm.get('price').errors.pattern || productForm.get('price').errors.touched">
+                                    Please enter numbers only
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <label>Discount</label>
+                        <input type="text" class="form-control mt-2" placeholder="eg: 5% off" [(ngModel)]="discount"
+                            (ngModelChange)="calculateDiscount()" formControlName="discount">
+                        <div *ngIf="productForm.get('discount').invalid && (productForm.get('discount').dirty ||
+                        productForm.get('discount').touched)">
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="productForm.get('discount').errors.pattern || productForm.get('discount').errors.touched">
+                                    Please enter numbers only
+                                </div>
+                                <div *ngIf="productForm.get('discount').errors.maxlength">Max discount 99% only</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <label>Discounted Price</label>
+                        <input type="text" class="form-control mt-2" [readonly]="true"
+                            style="color:lightslategrey;background-color: #f8f8f8;" formControlName="discountedPrice"
+                            value="{{discountedPrice}}">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row mt-3">
+                    <div class="col-lg-12">
+                        <label>Product Description <span style="color:red">*</span></label>
+                        <textarea class="form-control" rows="6" maxLength="2005"
+                            placeholder="Write your product description here" formControlName="description"></textarea>
+                    </div>
+                    <div
+                        *ngIf="productForm.get('description').invalid && (productForm.get('description').dirty || productForm.get('description').touched)">
+                        <div class="text-danger">
+                            <div
+                                *ngIf="productForm.get('description').errors.required || productForm.get('description').errors.touched">
+                                Please write product description
+                            </div>
+                            <div *ngIf="productForm.get('description').errors.maxlength">Sub-Category must
+                                be 2500 characters or less.</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container">
+                <div class="row mt-3">
+                    <div class="col-lg-3">
+                        <label>Cover Images</label>
+                        <input type="file" class="form-control" (change)="picked($event,1);displayProduct($event,1)">
+                        <img *ngIf="imagePreview.id == 1 && imagePreview.name" [src]="imagePreview.name"
+                            style="width:235px;height: 100px;border-radius: 21px;">
+                    </div>
+                    <div class="col-lg-3">
+                        <label>Second Images</label>
+                        <input type="file" class="form-control" multiple
+                            (change)="picked($event,2);displayProduct($event,2)">
+                        <img *ngIf="img2.id == 2 && img2.name" [src]="img2.name"
+                            style="width:235px;height: 100px;border-radius: 21px;">
+                    </div>
+                    <div class="col-lg-3">
+                        <label>Third Images <span style="color:#D3D3D3">(.jpg .png .jpeg)</span></label>
+                        <input type="file" class="form-control" multiple
+                            (change)="picked($event,3);displayProduct($event,3)">
+                        <img *ngIf="img3.id == 3 && img3.name" [src]="img3.name"
+                            style="width:235px;height: 100px;border-radius: 21px;">
+                    </div>
+                    <div class="col-lg-3">
+                        <label>Fourth Images</label>
+                        <input type="file" class="form-control" multiple
+                            (change)="picked($event,4);displayProduct($event,4)">
+                        <img *ngIf="img4.id == 4 && img4.name" [src]="img4.name"
+                            style="width:235px;height: 100px;border-radius: 21px;">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row mt-3">
+                    <div class="col-lg-3">
+                        <button type="submit" [disabled]="Disabled" class="btn btn-primary"><i class="fa fa-cart-arrow-down"
+                                aria-hidden="true"></i>
+                            Upload Product</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div>
+
+
+    </div>
+</div><br>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">SubCategory</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Discount</th>
+                    <th scope="col">After Discount</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Status</th>
+                    <th>View</th>
+                    <th><i class="fa fa-pencil-square-o text-primary" aria-hidden="true"></i></th>
+                    <th style="color:red"><i class="fa fa-trash" aria-hidden="true"></i></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let x of productsList index as i" >
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{x.name}}</td>
+                    <td>{{x.categoryName}}</td>
+                    <td>{{x.subCategoryName}}</td>
+                    <!-- <td>{{x.icon}}</td> -->
+                    <td> {{x.description}}</td>
+                    <td>{{x.price}}</td>
+                    <td>{{x.discount}}</td>
+                    <td>{{x.discountPrice}}</td>
+                    <td>{{x.qty}}</td>
+                    <td *ngIf="x.isActive else deactive">
+                        <p class="btn btn-outline-success btn-sm" (click)="activateProduct(x.id)">Activated</p>
+                    </td>
+                    <ng-template #deactive>
+                        <td>
+                            <p class="btn btn-outline-danger btn-sm" (click)="activateProduct(x.id)">Deactive
+                            </p>
+                        </td>
+                    </ng-template>
+                    <td class="text-info" (click)="viewProduct(contentSpecific, x.id)"><i class="fa fa-eye"
+                            aria-hidden="true"></i>
+                    </td>
+                    <td (click)="editProduct(x.categoryId)"><i class="fa fa-pencil-square-o text-primary "
+                            aria-hidden="true"></i></td>
+                    <td style="color:red" (click)="deleteProduct(x.id)"><i class="fa fa-trash" aria-hidden="true"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<!-- Modal Service -->
+<ng-template #contentSpecific let-modal>
+    <div class="card shadow">
+
+        <main class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-xl-7">
+                            <ngb-carousel *ngIf="productDetails">
+
+
+                                <ng-template ngbSlide *ngFor="let a of productDetails.images">
+
+                                    <div class="left-column">
+                                        <img [src]="a.image" alt="Random first slide">
+                                    </div>
+
+                                </ng-template>
+
+
+                                <!-- <ng-template ngbSlide>
+                                    <div class="left-column">
+                                        <img src="https://dzp3g6fzlnblr.cloudfront.net/wp-content/uploads/2022/08/Hesh-ANC_True-Black_S6HHW-N740_Hero_v001.jpg"
+                                            alt="">
+                                    </div>
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <div class="left-column">
+                                        <img class="active"
+                                            src="https://cdn.shopify.com/s/files/1/0057/8938/4802/products/1_5.png?v=1655534211"
+                                            alt="">
+                                    </div>
+                                </ng-template> -->
+                            </ngb-carousel>
+                        </div>
+                        <div class="col-xl-5" *ngIf="productDetails">
+                            <div class="container">
+                                <div class="product-description span mt-5">
+                                    <span class="">{{productDetails.subCategoryName}}</span>
+                                    <h1 class="mt-4">{{productDetails.name}}</h1>
+                                    <p>{{productDetails.description}}</p>
+                                </div>
+                                <!-- Product Configuration -->
+                                <div class="product-configuration">
+                                    <!-- Cable Configuration -->
+                                    <div class="cable-config">
+                                        <span>Specification</span>
+                                        <div class="cable-choose m-5">
+                                            <span class="m-3">Qty:</span>
+                                            <span class="m-3">{{productDetails.qty}} Pcs.</span>
+                                            <span class="text-danger">Hurry..!! only few left.!</span>
+                                        </div>
+
+                                        <a href="#">Click to heck your cart</a>
+                                    </div>
+                                </div>
+                                <!-- Product Pricing -->
+                                <div class="product-price">
+                                    <span> <del> {{productDetails.price}} &#x20B9;</del></span>
+                                    <!-- <span>{{productDetails.discountPrice}}$</span> -->
+                                    <span>{{productDetails.discountPrice}} &#x20B9;</span>
+                                    <a href="#" class="cart-btn">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+</ng-template>

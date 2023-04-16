@@ -1,0 +1,205 @@
+<app-layout></app-layout>
+<div class="card shadow">
+    <section class="bg-light">
+        <!--Section: Contact v.2-->
+        <section class="mb-4">
+            <!--Section heading-->
+            <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+            <!--Section description-->
+            <p class="text-center w-responsive mx-auto mb-5">If you have any questions about our Returns or Refunds
+                Policy or any other query please leave us a message.</p>
+            <div class="container">
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-9 mb-md-0 mb-5">
+                        <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                            <!--Grid row-->
+                            <div class="row mt-4">
+
+                                <!--Grid column-->
+                                <div class="col-md-5">
+                                    <div class="md-form mb-0">
+                                        <label for="name" class="">Full Name</label>
+                                        <input type="text" id="name" name="name" class="form-control">
+
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-md-5">
+                                    <div class="md-form mb-0">
+                                        <label for="email" class="">Email</label>
+                                        <input type="text" id="email" name="email" class="form-control">
+
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                            </div>
+                            <!--Grid row-->
+
+                            <!--Grid row-->
+                            <div class="row mt-4">
+
+                                <!--Grid column-->
+                                <div class="col-md-5">
+                                    <div class="md-form mb-0">
+                                        <label for="name" class="">Mobile</label>
+                                        <input type="text" id="name" name="name" class="form-control">
+
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-md-5">
+                                    <div class="md-form mb-0">
+                                        <label for="email" class="">Subject</label>
+                                        <input type="text" id="email" name="email" class="form-control">
+
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                            </div>
+                            <!--Grid row-->
+
+                            <!--Grid row-->
+                            <div class="row mt-4">
+
+                                <!--Grid column-->
+                                <div class="col-md-10">
+
+                                    <div class="md-form">
+                                        <label for="message">Your query</label>
+                                        <textarea type="text" id="message" name="message" rows="2"
+                                            class="form-control md-textarea"></textarea>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--Grid row-->
+
+                        </form>
+
+                        <div class="text-left text-md-left mt-4">
+                            <a class="btn btn-primary btn-lg">Send</a>
+                        </div>
+                        <div class="status"></div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-3 text-center">
+                        <ul class="list-unstyled mb-0">
+                            <li ><i class="fa fa-map-marker fa-2x text-warning"></i>
+                                <p>Ghaziabad, U.P, India</p>
+                            </li>
+
+                            <li class="mt-5"><i class="fa fa-mobile mt-4 fa-2x text-warning"></i>
+                                <p>+91 9721255554</p>
+                            </li>
+
+                            <li class="mt-5"><i class="fa fa-envelope mt-4 fa-2x text-info"></i>
+                                <p>contact@socialhacker.in</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+            </div>
+        </section>
+        <!--Section: Contact v.2-->
+    </section>
+</div>
+
+
+
+<footer class="bg-black text-center py-5">
+    <div class="container px-5">
+        <div class="text-white-50 small">
+            <div class="mb-2">&copy; Your Website 2023. All Rights Reserved.</div>
+            <a href="">Privacy</a>
+            <span class="mx-1">&middot;</span>
+            <a href="">Terms</a>
+            <span class="mx-1">&middot;</span>
+            <a href="">FAQ</a>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-gradient-primary-to-secondary p-4">
+                <h5 class="modal-title font-alt text-white" id="feedbackModalLabel">Send feedback</h5>
+                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-0 p-4">
+
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <!-- Name input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="name" type="text" placeholder="Enter your name..."
+                            data-sb-validations="required" />
+                        <label for="name">Full name</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                    </div>
+                    <!-- Email address input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                            data-sb-validations="required,email" />
+                        <label for="email">Email address</label>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                    </div>
+                    <!-- Phone number input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
+                            data-sb-validations="required" />
+                        <label for="phone">Phone number</label>
+                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
+                        </div>
+                    </div>
+                    <!-- Message input-->
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..."
+                            style="height: 10rem" data-sb-validations="required"></textarea>
+                        <label for="message">Message</label>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+                        </div>
+                    </div>
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br />
+                            <a
+                                href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                    </div>
+                    <!-- Submit Button-->
+                    <div class="d-grid"><button class="btn btn-primary rounded-pill btn-lg disabled" id="submitButton"
+                            type="submit">Submit</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
