@@ -11,6 +11,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { PlanComponent } from './plan/plan.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactusComponent } from './contactus/contactus.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     LayoutComponent,
     PlanComponent,
     ContactusComponent,
+    ProductsComponent,
+    ProductdetailsComponent,
     
   ],
   imports: [
