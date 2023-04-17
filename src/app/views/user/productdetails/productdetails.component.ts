@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./productdetails.component.scss']
 })
 export class ProductdetailsComponent {
+  constructor() { }
+ countValue:number=1 
+  ngOnInit(): void {
+  }
 
+  countM(){
+    this.countValue-=1
+
+
+  }
+  countP(){
+    this.countValue+=1
+
+  }
 }

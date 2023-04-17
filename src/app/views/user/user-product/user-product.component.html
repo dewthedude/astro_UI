@@ -1,235 +1,337 @@
 <div class="main row">
     <div class="col-12 text-center">
-      <h3 class="text-white hedding mt-5">Shop Details</h3>
-      <hr class="hr2 mt-4 mb-4" />
+      <h3 class="text-white hedding mt-5">Shop</h3>
+      <hr class="hr2 mt-3 mb-4" />
     </div>
   
     <div class="row product-section">
-      <div class="row product-section">
-        <div class="row container p-5">
-          <div class="col-lg-3 col-md-4 col-sm-12">
-            <div class="as_shopsingle_slider">
-              <div class="as_shopsingle_for slick-initialized slick-slider">
-                <div class="slick-list draggable">
-                  <div class="slick-track" style="opacity: 1; width: 1044px">
-                    <div
-                      class="as_prod_img slick-slide slick-current slick-active"
-                      data-slick-index="0"
-                      aria-hidden="false"
-                      tabindex="0"
-                      style="
-                        width: 261px;
-                        position: relative;
-                        left: 0px;
-                        top: 0px;
-                        z-index: 999;
-                        opacity: 1;
-                      "
-                    >
-                      <img
-                        src="https://c4.wallpaperflare.com/wallpaper/853/586/450/universe-abstract-cube-gradient-wallpaper-preview.jpg"
-                        alt=""
-                        class="img-responsive"
-                        style="width: 200px; height: 300px"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-9 col-md-8 col-sm-12">
-            <div class="as_product_description">
-              <h3 class="as_subheading text-white m-0 pb-1">navgraha Yantra</h3>
-              <h2 class="as_price">$200 <del>$300</del></h2>
-              <div class="product_rating as_padderBottom10">
-                <span class="ref_number as_font14 text-white"
-                  >Ref No. 1456328</span
-                >
-                <span class="rating_star">
-                  <img src="assets/images/rating.png" alt="" />
-                </span>
-              </div>
-              <p class="as_font14 as_padderBottom10 text-white">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              </p>
-              <div class="stock_details as_padderBottom10" style="color: green">
-                <span>8 In Stock</span>
-              </div>
-              <div class="prod_quantity as_padderBottom40 text-white">
-                Quantity
-                <div class="quantity">
-                  <button
-                    type="button"
-                    class="qty_button minus"
-                    (click)="countM()"
+      <div class="row p-5">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+          <div
+            class="card as_product_box"
+            style="border: none; background-color: rgb(10 44 78)"
+            (click)="getDetails()"
+          >
+            <div class="as_product_img">
+              <img
+                class="card-img"
+                src="https://wallpaper.dog/large/5503433.jpg"
+                alt="Card image"
+                style="height: 342px; border: none"
+              />
+              <ul>
+                <li>
+                  <a
+                    href="cart.html"
+                    tabindex="-1"
+                    class="text-decoration-none text-white"
+                    ><img src="assets/images/svg/cart.svg" alt="" /><span
+                      >Add To Card</span
+                    ></a
                   >
-                    -
-                  </button>
-                  <input
-                    type="text"
-                    id="quantity_6041ce9eca5d6"
-                    class="input-text form-control qty text"
-                    step="1"
-                    min="1"
-                    max="100"
-                    name="quantity"
-                    [(ngModel)]="countValue"
-                    title="Qty"
-                    inputmode="numeric"
-                  />
-  
-                  <button
-                    type="button"
-                    class="qty_button plus"
-                    (click)="countP()"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-              <div class="product_buy">
-                <a href="shop.html" class="buy_btn as_btn">Buy Now</a>
-                <a href="#" class="ad_wishlist"
-                  >Add To Wishlist
-                  <i class="fa fa-heart-o" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-            <div class="as_tab_wrapper as_padderTop80">
-              <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link active"
-                    id="Today"
-                    data-bs-toggle="tab"
-                    data-bs-target="#today"
-                    type="button"
-                    role="tab"
-                    aria-controls="today"
-                    aria-selected="true"
-                  >
-                    Descriptions
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    id="Tomorrow"
-                    data-bs-toggle="tab"
-                    data-bs-target="#tomorrow"
-                    type="button"
-                    role="tab"
-                    aria-controls="tomorrow"
-                    aria-selected="false"
-                  >
-                    Review
-                  </button>
                 </li>
               </ul>
-  
-              <div class="tab-content" id="myTabContent">
-                <div
-                  class="tab-pane fade active show"
-                  id="today"
-                  role="tabpanel"
-                  aria-labelledby="Today"
-                >
-                  <h3 class="as_subheading as_orange">Description</h3>
-                  <p class="as_font14 as_padderBottom20">
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                    uest labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    sequis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                    ea commodo consequat. Duiess aute irure dolor in reprehenderit
-                    in volupisitate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat noeseiin proident.
-                  </p>
-  
-                  <h3 class="as_subheading as_orange">feature</h3>
-                  <p class="as_font14 as_padderBottom20">
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                    uest labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    sequis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                    ea commodo consequat. Duiess aute irure dolor in reprehenderit
-                    in volupsitate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat noeseiin proident,
-                    sunt isden culpa quesdei officia deserunt mollit anim id est
-                    laborumc ommodo consequat. Duiess aute irure.
-                  </p>
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="tomorrow"
-                  role="tabpanel"
-                  aria-labelledby="Tomorrow"
-                >
-                  <h3 class="as_subheading as_orange">Review</h3>
-                  <p class="as_font14 as_padderBottom20">
-                    There are no review yet
-                  </p>
-  
-                  <h3 class="as_subheading as_orange">Add A Review</h3>
-                  <p class="as_font14 as_padderBottom20">
-                    Your email address will not be published.
-                  </p>
-  
-                  <form action="">
-                    <div class="form-group">
-                      <textarea
-                        name=""
-                        id=""
-                        placeholder="Your Review"
-                        class="form-control"
-                      ></textarea>
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="form-group">
-                          <input
-                            type="text"
-                            name=""
-                            class="form-control"
-                            placeholder="Your Name"
-                            id=""
-                          />
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="form-group">
-                          <input
-                            type="text"
-                            name=""
-                            class="form-control"
-                            placeholder="Your Email"
-                            id=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-  
-                    <button class="as_btn">submit</button>
-                  </form>
-                </div>
-              </div>
             </div>
+            <span
+              ><img
+                class="ms-1"
+                src="../../../../../../assets/images/images/images/rating2-removebg-preview.png"
+                alt="img"
+                style="width: 100px"
+            /></span>
+            <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+              GemStone
+            </h4>
+            <span class="price ms-1"
+              >$20 <del>$80</del><span class="as_orange">(60% off)</span></span
+            >
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+          <div
+            class="card as_product_box"
+            style="border: none; background-color: rgb(10 44 78)"
+          >
+            <div class="as_product_img">
+              <img
+                class="card-img"
+                src="https://wallpaper.dog/large/5503433.jpg"
+                alt="Card image"
+                style="height: 342px; border: none"
+              />
+              <ul>
+                <li>
+                  <a
+                    href="cart.html"
+                    tabindex="-1"
+                    class="text-decoration-none text-white"
+                    ><img src="assets/images/svg/cart.svg" alt="" /><span
+                      >Add To Card</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <span
+              ><img
+                class="ms-1"
+                src="../../../../assets/images/rating2-removebg-preview.png"
+                alt="img"
+                style="width: 100px"
+            /></span>
+            <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+              GemStone
+            </h4>
+            <span class="price ms-1"
+              >$20 <del>$80</del><span class="as_orange">(60% off)</span></span
+            >
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+          <div
+            class="card as_product_box"
+            style="border: none; background-color: rgb(10 44 78)"
+          >
+            <div class="as_product_img">
+              <img
+                class="card-img"
+                src="https://wallpaper.dog/large/5503433.jpg"
+                alt="Card image"
+                style="height: 342px; border: none"
+              />
+              <ul>
+                <li>
+                  <a
+                    href="cart.html"
+                    tabindex="-1"
+                    class="text-decoration-none text-white"
+                    ><img src="assets/images/svg/cart.svg" alt="" /><span
+                      >Add To Card</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <span
+              ><img
+                class="ms-1"
+                src="../../../../../assets/images/images/rating2-removebg-preview.png"
+                alt="img"
+                style="width: 100px"
+            /></span>
+            <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+              GemStone
+            </h4>
+            <span class="price ms-1"
+              >$20 <del>$80</del><span class="as_orange">(60% off)</span></span
+            >
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+          <div
+            class="card as_product_box"
+            style="border: none; background-color: rgb(10 44 78)"
+          >
+            <div class="as_product_img">
+              <img
+                class="card-img"
+                src="https://wallpaper.dog/large/5503433.jpg"
+                alt="Card image"
+                style="height: 342px; border: none"
+              />
+              <ul>
+                <li>
+                  <a
+                    href="cart.html"
+                    tabindex="-1"
+                    class="text-decoration-none text-white"
+                    ><img src="assets/images/svg/cart.svg" alt="" /><span
+                      >Add To Card</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <span
+              ><img
+                class="ms-1"
+                src="../../../../../assets/images/images/rating2-removebg-preview.png"
+                alt="img"
+                style="width: 100px"
+            /></span>
+            <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+              GemStone
+            </h4>
+            <span class="price ms-1"
+              >$20 <del>$80</del><span class="as_orange">(60% off)</span></span
+            >
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+          <div
+            class="card as_product_box"
+            style="border: none; background-color: rgb(10 44 78)"
+          >
+            <div class="as_product_img">
+              <img
+                class="card-img"
+                src="https://wallpaper.dog/large/5503433.jpg"
+                alt="Card image"
+                style="height: 342px; border: none"
+              />
+              <ul>
+                <li>
+                  <a
+                    href="cart.html"
+                    tabindex="-1"
+                    class="text-decoration-none text-white"
+                    ><img src="assets/images/svg/cart.svg" alt="" /><span
+                      >Add To Card</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <span
+              ><img
+                class="ms-1"
+                src="../../../../assets/images/rating2-removebg-preview.png"
+                alt="img"
+                style="width: 100px"
+            /></span>
+            <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+              GemStone
+            </h4>
+            <span class="price ms-1"
+              >$20 <del>$80</del><span class="as_orange">(60% off)</span></span
+            >
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+          <div
+            class="card as_product_box"
+            style="border: none; background-color: rgb(10 44 78)"
+          >
+            <div class="as_product_img">
+              <img
+                class="card-img"
+                src="https://wallpaper.dog/large/5503433.jpg"
+                alt="Card image"
+                style="height: 342px; border: none"
+              />
+              <ul>
+                <li>
+                  <a
+                    href="cart.html"
+                    tabindex="-1"
+                    class="text-decoration-none text-white"
+                    ><img src="assets/images/svg/cart.svg" alt="" /><span
+                      >Add To Card</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <span
+              ><img
+                class="ms-1"
+                src="../../../../assets/images/rating2-removebg-preview.png"
+                alt="img"
+                style="width: 100px"
+            /></span>
+            <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+              GemStone
+            </h4>
+            <span class="price ms-1"
+              >$20 <del>$80</del><span class="as_orange">(60% off)</span></span
+            >
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+          <div
+            class="card as_product_box"
+            style="border: none; background-color: rgb(10 44 78)"
+          >
+            <div class="as_product_img">
+              <img
+                class="card-img"
+                src="https://wallpaper.dog/large/5503433.jpg"
+                alt="Card image"
+                style="height: 342px; border: none"
+              />
+              <ul>
+                <li>
+                  <a
+                    href="cart.html"
+                    tabindex="-1"
+                    class="text-decoration-none text-white"
+                    ><img src="assets/images/svg/cart.svg" alt="" /><span
+                      >Add To Card</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <span
+              ><img
+                class="ms-1"
+                src="../../../../assets/images/rating2-removebg-preview.png"
+                alt="img"
+                style="width: 100px"
+            /></span>
+            <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+              GemStone
+            </h4>
+            <span class="price ms-1"
+              >$20 <del>$80</del><span class="as_orange">(60% off)</span></span
+            >
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+          <div
+            class="card as_product_box"
+            style="border: none; background-color: rgb(10 44 78)"
+          >
+            <div class="as_product_img">
+              <img
+                class="card-img"
+                src="https://wallpaper.dog/large/5503433.jpg"
+                alt="Card image"
+                style="height: 342px; border: none"
+              />
+              <ul>
+                <li>
+                  <a
+                    href="cart.html"
+                    tabindex="-1"
+                    class="text-decoration-none text-white"
+                    ><img src="assets/images/svg/cart.svg" alt="" /><span
+                      >Add To Card</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <span
+              ><img
+                class="ms-1"
+                src="../../../../assets/images/rating2-removebg-preview.png"
+                alt="img"
+                style="width: 100px"
+            /></span>
+            <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+              GemStone
+            </h4>
+            <span class="price ms-1"
+              >$20 <del>$80</del><span class="as_orange">(60% off)</span></span
+            >
           </div>
         </div>
       </div>
     </div>
     <div class="row product-section">
       <div class="col-12 text-center">
-        <h1 class="text-white hedding mt-5">Related Products</h1>
+        <h1 class="text-white hedding mt-5">Our Letest Product</h1>
         <hr class="hr2 mt-4 mb-4" />
         <p class="text-white mt-3 w-50 m-auto text">
           Consectetur adipiscing elit, sed do eiusmod tempor incididuesdeentiut
@@ -295,7 +397,7 @@
                     <span
                       ><img
                         class="ms-1"
-                        src="../../../assets/rating2-removebg-preview.png"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
                         alt="img"
                         style="width: 100px"
                     /></span>
@@ -336,7 +438,7 @@
                     <span
                       ><img
                         class="ms-1"
-                        src="../../../assets/rating2-removebg-preview.png"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
                         alt="img"
                         style="width: 100px"
                     /></span>
@@ -377,7 +479,7 @@
                     <span
                       ><img
                         class="ms-1"
-                        src="../../../assets/rating2-removebg-preview.png"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
                         alt="img"
                         style="width: 100px"
                     /></span>
@@ -418,7 +520,7 @@
                     <span
                       ><img
                         class="ms-1"
-                        src="../../../assets/rating2-removebg-preview.png"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
                         alt="img"
                         style="width: 100px"
                     /></span>
@@ -437,7 +539,7 @@
               <div class="row p-5">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
                   <!-- <div class="text-center card"  style="background-color: rgb(10 44 78);;">
-                                 <img src="../../../assets/vastu-s.png" class="card-img-top m-auto mt-2" alt="..." style="width: 70px;
+                                 <img src="../../../../assets/images/vastu-s.png" class="card-img-top m-auto mt-2" alt="..." style="width: 70px;
                                  ">
                                  <div class="card-body text-center">
                                    <h4 class="card-title text-white">Vastu Shastra </h4>
@@ -477,7 +579,7 @@
                     <span
                       ><img
                         class="ms-1"
-                        src="../../../assets/rating2-removebg-preview.png"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
                         alt="img"
                         style="width: 100px"
                     /></span>
@@ -518,7 +620,7 @@
                     <span
                       ><img
                         class="ms-1"
-                        src="../../../assets/rating2-removebg-preview.png"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
                         alt="img"
                         style="width: 100px"
                     /></span>
@@ -559,7 +661,7 @@
                     <span
                       ><img
                         class="ms-1"
-                        src="../../../assets/rating2-removebg-preview.png"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
                         alt="img"
                         style="width: 100px"
                     /></span>
@@ -600,7 +702,7 @@
                     <span
                       ><img
                         class="ms-1"
-                        src="../../../assets/rating2-removebg-preview.png"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
                         alt="img"
                         style="width: 100px"
                     /></span>
@@ -645,7 +747,7 @@
                     <span
                       ><img
                         class="ms-1"
-                        src="../../../assets/rating2-removebg-preview.png"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
                         alt="img"
                         style="width: 100px"
                     /></span>
@@ -686,7 +788,7 @@
                     <span
                       ><img
                         class="ms-1"
-                        src="../../../assets/rating2-removebg-preview.png"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
                         alt="img"
                         style="width: 100px"
                     /></span>
@@ -727,7 +829,7 @@
                     <span
                       ><img
                         class="ms-1"
-                        src="../../../assets/rating2-removebg-preview.png"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
                         alt="img"
                         style="width: 100px"
                     /></span>
@@ -768,7 +870,7 @@
                     <span
                       ><img
                         class="ms-1"
-                        src="../../../assets/rating2-removebg-preview.png"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
                         alt="img"
                         style="width: 100px"
                     /></span>

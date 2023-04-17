@@ -11,8 +11,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { PlanComponent } from './plan/plan.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactusComponent } from './contactus/contactus.component';
-import { ProductsComponent } from './products/products.component';
+
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { FooterComponent } from './footer/footer.component';
+import { UserProductComponent } from './user-product/user-product.component';
 
 
 @NgModule({
@@ -21,8 +23,9 @@ import { ProductdetailsComponent } from './productdetails/productdetails.compone
     LayoutComponent,
     PlanComponent,
     ContactusComponent,
-    ProductsComponent,
     ProductdetailsComponent,
+    FooterComponent,
+    UserProductComponent,
     
   ],
   imports: [
