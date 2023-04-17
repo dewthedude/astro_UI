@@ -5,15 +5,18 @@ import { HomeComponent } from './home/home.component'
 import { LayoutComponent } from './layout/layout.component';
 import { PlanComponent } from './plan/plan.component';
 import { UserProductComponent } from './user-product/user-product.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
 
 const routes: Routes = [
   {
     path: '',
+    component:HomeComponent,
     data: {
-      title: 'Home'
+    
     },
     children:
       [
+        
         {
           path: 'home',
           component: HomeComponent,
@@ -26,9 +29,10 @@ const routes: Routes = [
           component:UserProductComponent
         },
         {
-          path: 'layout',
-          component: LayoutComponent,
+          path: 'details',
+          component: ProductdetailsComponent,
         },
+        
         {
           path:'plan/:id',
           component:PlanComponent

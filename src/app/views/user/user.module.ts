@@ -11,6 +11,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { PlanComponent } from './plan/plan.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactusComponent } from './contactus/contactus.component';
+import { FormsModule } from '@angular/forms';
 
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { FooterComponent } from './footer/footer.component';
@@ -34,7 +35,8 @@ import { UserProductComponent } from './user-product/user-product.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgbCarouselModule,
-    NgbAccordionModule
+    NgbAccordionModule,
+    FormsModule
   ]
 })
 export class UserModule { }
