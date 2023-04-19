@@ -9,7 +9,7 @@ import { RegisterComponent } from './views/pages/register/register.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'user',
+    redirectTo: 'user/home',
     pathMatch: 'full'
   },
   {
@@ -34,22 +34,17 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/base/base.module').then((m) => m.BaseModule)
       },
-      // {
-      //   path: 'user',
-      //   loadChildren: () =>
-      //     import('./views/user/user.module').then((m) => m.UserModule)
-      // },
       {
         path: 'package',
         loadChildren: () =>
           import('./views/categories/package.module').then((m) => m.PackageModule)
       },
+
       {
         path: 'buttons',
         loadChildren: () =>
           import('./views/buttons/buttons.module').then((m) => m.ButtonsModule)
       },
-
       {
         path: 'notifications',
         loadChildren: () =>
@@ -67,6 +62,7 @@ const routes: Routes = [
       },
     ]
   },
+  
   {
     path: 'user',
     loadChildren: () =>
@@ -100,7 +96,7 @@ const routes: Routes = [
       title: 'Register Page'
     }
   },
-  { path: '**', redirectTo: 'user' }
+  { path: '**', redirectTo: 'user/home' }
 ];
 
 @NgModule({

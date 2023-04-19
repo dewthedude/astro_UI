@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductdetailsComponent implements OnInit {
   constructor() { }
-  countValue: any;
+  countValue: number = 1;
   ngOnInit(): void {
   }
 

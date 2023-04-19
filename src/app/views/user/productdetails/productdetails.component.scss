@@ -196,7 +196,7 @@
   .as_price {
     font-size: 28px;
     margin: 5px 0 15px;
-    color: orangered;
+    color: orange;
   }
   .as_price del {
     color: rgb(97 117 130);
@@ -348,7 +348,7 @@
   
   .as_btn {
     height: 50px;
-    background-color: orangered;
+    background-color: orange;
     font-size: 14px;
     text-transform: uppercase;
     display: inline-flex;
@@ -371,7 +371,7 @@
     bottom: 0;
     border-top: 25px solid transparent;
     border-bottom: 25px solid transparent;
-    border-left: 15px solid orangered;
+    border-left: 15px solid orange;
     transition: 0.2s linear;
   }
   .product_buy .as_btn {
@@ -382,7 +382,7 @@
     left: auto;
     right: 100%;
     border-left: none;
-    border-right: 15px solid orangered;
+    border-right: 15px solid orange;
   }
   a,
   a:hover,
@@ -475,7 +475,7 @@
     border-right-color: var(--dark-color1);
   }
   .checkout_wrapper_box ul li.active {
-    background-color: orangered;
+    background-color: orange;
   }
   .as_padderTop80 {
     padding-top: 80px;

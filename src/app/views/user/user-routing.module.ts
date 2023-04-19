@@ -10,13 +10,11 @@ import { ProductdetailsComponent } from './productdetails/productdetails.compone
 const routes: Routes = [
   {
     path: '',
-    component:HomeComponent,
     data: {
-    
+      title: 'Home'
     },
     children:
       [
-        
         {
           path: 'home',
           component: HomeComponent,
@@ -25,14 +23,21 @@ const routes: Routes = [
           }
         },
         {
-          path:'products',
-          component:UserProductComponent
+          path:'product',
+          component:UserProductComponent,
+          data:{
+            title:'Products'
+          }
         },
+
         {
-          path: 'details',
-          component: ProductdetailsComponent,
+          path:'details',
+          component:ProductdetailsComponent,
+          data:{
+            title:'Product Details'
+          }
         },
-        
+    
         {
           path:'plan/:id',
           component:PlanComponent
