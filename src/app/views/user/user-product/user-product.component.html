@@ -6,11 +6,10 @@
     </div>
     <div class="row product-section">
       <div class="row p-5">
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3" *ngFor="let x of productList">
+        <div (click)="getProductbyId(x.id)" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3" *ngFor="let x of productList">
           <div
             class="card as_product_box"
-            style="border: none; background-color: rgb(10 44 78)"
-          >
+            style="border: none; background-color: rgb(10 44 78)">
             <div class="as_product_img" >
               <img
                 class="card-img"

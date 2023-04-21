@@ -18,12 +18,12 @@ export class UserProductComponent {
 
   getProducts() {
     this._user.getProducts().subscribe(res => {
-      
+
       if (res != null) {
         let response: any = res;
         this.productList = response.data;
         console.log(this.productList);
-        
+
       }
       else {
         alert("No Products Found")
@@ -34,7 +34,9 @@ export class UserProductComponent {
       }
     );
   }
-  getDetails() {
-    this._router.navigate(['/productdetails']);
+
+  getProductbyId(id: any) {
+    debugger
+    this._router.navigate(['/user/details',id]);
   }
 }

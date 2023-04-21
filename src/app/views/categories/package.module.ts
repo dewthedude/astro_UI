@@ -14,6 +14,7 @@ import { PackageComponent } from './package/package.component';
 import { PriceComponent } from './price/price.component';
 import { ProductsComponent } from './products/products.component';
 import { PageloaderComponent } from './pageloader/pageloader.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 
 
@@ -27,6 +28,7 @@ import { PageloaderComponent } from './pageloader/pageloader.component';
     FormsModule,
     ModalModule,
     NgbCarouselModule,
+    TooltipModule.forRoot()
 
   ],
   declarations: [

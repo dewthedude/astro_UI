@@ -12,4 +12,7 @@ export class UserService {
   getProducts() {
     return this.http.get(`${environment.AppConfig.URLs.AstroAPI}/api/User/products`);
   }
+  getProductById(id: any) {
+    return this.http.get(`${environment.AppConfig.URLs.AstroAPI}/api/User/${id}/product`)
+  }
 }

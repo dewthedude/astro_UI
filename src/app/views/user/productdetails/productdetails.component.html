@@ -5,7 +5,7 @@
       <hr class="hr2 mt-4 mb-4" />
     </div>
   
-    <div class="row product-section">
+    <div class="row product-section" *ngIf="product != null">
       <div class="row product-section">
         <div class="row container p-5">
           <div class="col-lg-3 col-md-4 col-sm-12">
@@ -41,8 +41,8 @@
           </div>
           <div class="col-lg-9 col-md-8 col-sm-12">
             <div class="as_product_description">
-              <h3 class="as_subheading text-white m-0 pb-1">navgraha Yantra</h3>
-              <h2 class="as_price">$200 <del>$300</del></h2>
+              <h3 class="as_subheading text-white m-0 pb-1">{{product.name}}</h3>
+              <h2 class="as_price">${{product.discountedPrice}} <del>${{product.price}}</del></h2>
               <div class="product_rating as_padderBottom10">
                 <span class="ref_number as_font14 text-white"
                   >Ref No. 1456328</span
@@ -52,14 +52,7 @@
                 </span>
               </div>
               <p class="as_font14 as_padderBottom10 text-white">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+               {{product.description}}
               </p>
               <div class="stock_details as_padderBottom10" style="color: green">
                 <span>8 In Stock</span>
@@ -148,15 +141,10 @@
                 >
                   <h3 class="as_subheading as_orange">Description</h3>
                   <p class="as_font14 as_padderBottom20">
-                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                    uest labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    sequis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                    ea commodo consequat. Duiess aute irure dolor in reprehenderit
-                    in volupisitate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat noeseiin proident.
+                   {{product.description}}
                   </p>
   
-                  <h3 class="as_subheading as_orange">feature</h3>
+                  <!-- <h3 class="as_subheading as_orange">feature</h3>
                   <p class="as_font14 as_padderBottom20">
                     Consectetur adipisicing elit, sed do eiusmod tempor incididunt
                     uest labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -166,7 +154,7 @@
                     pariatur. Excepteur sint occaecat cupidatat noeseiin proident,
                     sunt isden culpa quesdei officia deserunt mollit anim id est
                     laborumc ommodo consequat. Duiess aute irure.
-                  </p>
+                  </p> -->
                 </div>
                 <div
                   class="tab-pane fade"
