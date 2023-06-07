@@ -6,6 +6,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { PlanComponent } from './plan/plan.component';
 import { UserProductComponent } from './user-product/user-product.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 const routes: Routes = [
   {
@@ -23,28 +24,31 @@ const routes: Routes = [
           }
         },
         {
-          path:'product',
-          component:UserProductComponent,
-          data:{
-            title:'Products'
+          path: 'product',
+          component: UserProductComponent,
+          data: {
+            title: 'Products'
           }
         },
 
         {
-          path:'details/:id',
-          component:ProductdetailsComponent,
-          data:{
-            title:'Product Details'
+          path: 'details/:id',
+          component: ProductdetailsComponent,
+          data: {
+            title: 'Product Details'
           }
         },
-    
         {
-          path:'plan/:id',
-          component:PlanComponent
+          path: 'aboutus',
+          component: AboutusComponent
         },
         {
-          path:'contactus',
-          component:ContactusComponent
+          path: 'plan/:id',
+          component: PlanComponent
+        },
+        {
+          path: 'contactus',
+          component: ContactusComponent
         }
       ]
   }

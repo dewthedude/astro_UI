@@ -15,6 +15,7 @@ import { PriceComponent } from './price/price.component';
 import { ProductsComponent } from './products/products.component';
 import { PageloaderComponent } from './pageloader/pageloader.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 
 
@@ -28,7 +29,9 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     FormsModule,
     ModalModule,
     NgbCarouselModule,
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+
+    NgbModule
 
   ],
   declarations: [

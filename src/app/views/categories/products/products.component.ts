@@ -4,12 +4,13 @@ import { ProductService } from '../../../services/product.service'
 import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { catchError, finalize, throwError } from 'rxjs';
+import { log } from 'console';
 
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  
+
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent {
@@ -292,7 +293,7 @@ export class ProductsComponent {
       // alert(error.message)
       this._toaster.error(error.message, "Error.!")
       this.isDisable = false;
-      
+
     }));
     debugger
     this.productForm.reset();
@@ -312,7 +313,7 @@ export class ProductsComponent {
       id: 0,
       name: ''
     };
-  
+
   }
   getActiveCategory() {
     this.isLoading = true
@@ -383,29 +384,30 @@ export class ProductsComponent {
 
   activateProduct(id: any) {
     debugger
-    this._productService.activateProduct(id).pipe(
-      catchError((error) => {
-        debugger
-        console.log(error);
-        return throwError(error);
-      }),
-      finalize(() => {
-        // Cleanup code here
-      })
-    ).subscribe((result: any) => {
-      debugger
-      if (result.succeeded) {
-        this.productDetails = result.data;
-        console.log(this.productDetails);
-        this.image = this.productDetails.images[0].image;
-        alert(this.image);
+    this._productService.activateProduct(id).subscribe(response => {
+      let res: any = response;
+      if (res.succeeded) {
+        this._toaster.success(res.message);
+        this.getAllProducts()
       }
-    });
+      else {
+        this._toaster.error(res.message)
+      }
+    }, (e => {
+      this._toaster.error(e.error)
+      console.log(e);
+    }))
 
   }
   editProduct(id: any) {
   }
   deleteProduct(id: any) {
+    this._productService.deleteProduct(id).subscribe(response => {
+      let res: any = response;
+    }, (e => {
+      console.log(e);
+
+    }))
   }
   viewProduct(content: any, id: any) {
     this.getProductById(id);

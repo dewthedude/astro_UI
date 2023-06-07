@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserProductComponent } from './user-product/user-product.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { UserProductComponent } from './user-product/user-product.component';
     ProductdetailsComponent,
     FooterComponent,
     UserProductComponent,
+    AboutusComponent,
     
   ],
   imports: [
