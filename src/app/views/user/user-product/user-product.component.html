@@ -1,0 +1,631 @@
+<app-layout></app-layout>
+<div class="main row">
+    <div class="col-12 text-center">
+      <h3 class="text-white hedding mt-5">Shop</h3>
+      <hr class="hr2 mt-3 mb-4" />
+    </div>
+    <div class="row product-section">
+      <div class="row p-5">
+        <div (click)="getProductbyId(x.id)" class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3" *ngFor="let x of productList">
+          <div
+            class="card as_product_box"
+            style="border: none; background-color: rgb(10 44 78)">
+            <div class="as_product_img" >
+              <img
+                class="card-img"
+                [src]="x.images[0].path"
+                alt="Card image"
+                style="height: 342px; border: none"
+              />
+              <ul>
+                <li>
+                  <a
+                    href="/user/details"
+                    tabindex="-1"
+                    class="text-decoration-none text-white"
+                    ><img src="assets/images/svg/cart.svg" alt="" /><span
+                      >Add To Card</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <span
+              ><img
+                class="ms-1"
+                src="../../../../assets/images/rating2-removebg-preview.png"
+                
+                alt="img"
+                style="width: 100px"
+            /></span>
+            <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+              {{x.name}}
+            </h4>
+            <span class="price ms-1"
+              ><h5 class="as_orange">&nbsp; <b><i class="fa fa-inr" aria-hidden="true"></i> {{x.discountedPrice}}</b></h5> &nbsp;<del> <i class="fa fa-inr" aria-hidden="true"></i> {{x.price}}</del><span class="as_orange">({{x.discount}}% off)</span></span
+            >
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    <div class="row product-section">
+      <div class="col-12 text-center">
+        <h1 class="text-white hedding mt-5">Our Letest Product</h1>
+        <hr class="hr2 mt-4 mb-4" />
+        <p class="text-white mt-3 w-50 m-auto text">
+          Consectetur adipiscing elit, sed do eiusmod tempor incididuesdeentiut
+          labore etesde dolore magna aliquapspendisse and the gravida.
+        </p>
+      </div>
+      <div class="row p-5">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row p-5">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+                  <div
+                    class="card as_product_box"
+                    style="border: none; background-color: rgb(10 44 78)"
+                  >
+                    <div class="as_product_img">
+                      <img
+                        class="card-img"
+                        src="https://wallpaper.dog/large/5503433.jpg"
+                        alt="Card image"
+                        style="height: 342px; border: none"
+                      />
+                      <ul>
+                        <li>
+                          <a
+                            href="cart.html"
+                            tabindex="-1"
+                            class="text-decoration-none text-white"
+                            ><img src="assets/images/svg/cart.svg" alt="" /><span
+                              >Add To Card</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <span
+                      ><img
+                        class="ms-1"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
+                        alt="img"
+                        style="width: 100px"
+                    /></span>
+                    <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+                      GemStone
+                    </h4>
+                    <span class="price ms-1"
+                      >$20 <del>$80</del
+                      ><span class="as_orange">(60% off)</span></span
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+                  <div
+                    class="card as_product_box"
+                    style="border: none; background-color: rgb(10 44 78)"
+                  >
+                    <div class="as_product_img">
+                      <img
+                        class="card-img"
+                        src="https://wallpaper.dog/large/5503433.jpg"
+                        alt="Card image"
+                        style="height: 342px; border: none"
+                      />
+                      <ul>
+                        <li>
+                          <a
+                            href="cart.html"
+                            tabindex="-1"
+                            class="text-decoration-none text-white"
+                            ><img src="assets/images/svg/cart.svg" alt="" /><span
+                              >Add To Card</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <span
+                      ><img
+                        class="ms-1"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
+                        alt="img"
+                        style="width: 100px"
+                    /></span>
+                    <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+                      GemStone
+                    </h4>
+                    <span class="price ms-1"
+                      >$20 <del>$80</del
+                      ><span class="as_orange">(60% off)</span></span
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+                  <div
+                    class="card as_product_box"
+                    style="border: none; background-color: rgb(10 44 78)"
+                  >
+                    <div class="as_product_img">
+                      <img
+                        class="card-img"
+                        src="https://wallpaper.dog/large/5503433.jpg"
+                        alt="Card image"
+                        style="height: 342px; border: none"
+                      />
+                      <ul>
+                        <li>
+                          <a
+                            href="cart.html"
+                            tabindex="-1"
+                            class="text-decoration-none text-white"
+                            ><img src="assets/images/svg/cart.svg" alt="" /><span
+                              >Add To Card</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <span
+                      ><img
+                        class="ms-1"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
+                        alt="img"
+                        style="width: 100px"
+                    /></span>
+                    <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+                      GemStone
+                    </h4>
+                    <span class="price ms-1"
+                      >$20 <del>$80</del
+                      ><span class="as_orange">(60% off)</span></span
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+                  <div
+                    class="card as_product_box"
+                    style="border: none; background-color: rgb(10 44 78)"
+                  >
+                    <div class="as_product_img">
+                      <img
+                        class="card-img"
+                        src="https://wallpaper.dog/large/5503433.jpg"
+                        alt="Card image"
+                        style="height: 342px; border: none"
+                      />
+                      <ul>
+                        <li>
+                          <a
+                            href="cart.html"
+                            tabindex="-1"
+                            class="text-decoration-none text-white"
+                            ><img src="assets/images/svg/cart.svg" alt="" /><span
+                              >Add To Card</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <span
+                      ><img
+                        class="ms-1"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
+                        alt="img"
+                        style="width: 100px"
+                    /></span>
+                    <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+                      GemStone
+                    </h4>
+                    <span class="price ms-1"
+                      >$20 <del>$80</del
+                      ><span class="as_orange">(60% off)</span></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row p-5">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+                  <!-- <div class="text-center card"  style="background-color: rgb(10 44 78);;">
+                                 <img src="../../../../assets/images/vastu-s.png" class="card-img-top m-auto mt-2" alt="..." style="width: 70px;
+                                 ">
+                                 <div class="card-body text-center">
+                                   <h4 class="card-title text-white">Vastu Shastra </h4>
+                                   <hr class="hr m-auto mt-4 mb-4">
+                                   <p class="card-text text-white">Some quick example text to build on  the card title<br> and make up the bulk of  the card's content.</p>
+                                 </div>
+                               
+                                 <div class="card-body text-center">
+                                   <a href="#" class="read_more ">Read More</a>
+                                  
+                                 </div>
+                               </div> -->
+                  <div
+                    class="card as_product_box"
+                    style="border: none; background-color: rgb(10 44 78)"
+                  >
+                    <div class="as_product_img">
+                      <img
+                        class="card-img"
+                        src="https://wallpaper.dog/large/5503433.jpg"
+                        alt="Card image"
+                        style="height: 342px; border: none"
+                      />
+                      <ul>
+                        <li>
+                          <a
+                            href="cart.html"
+                            tabindex="-1"
+                            class="text-decoration-none text-white"
+                            ><img src="assets/images/svg/cart.svg" alt="" /><span
+                              >Add To Card</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <span
+                      ><img
+                        class="ms-1"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
+                        alt="img"
+                        style="width: 100px"
+                    /></span>
+                    <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+                      GemStone
+                    </h4>
+                    <span class="price ms-1"
+                      >$20 <del>$80</del
+                      ><span class="as_orange">(60% off)</span></span
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+                  <div
+                    class="card as_product_box"
+                    style="border: none; background-color: rgb(10 44 78)"
+                  >
+                    <div class="as_product_img">
+                      <img
+                        class="card-img"
+                        src="https://wallpaper.dog/large/5503433.jpg"
+                        alt="Card image"
+                        style="height: 342px; border: none"
+                      />
+                      <ul>
+                        <li>
+                          <a
+                            href="cart.html"
+                            tabindex="-1"
+                            class="text-decoration-none text-white"
+                            ><img src="assets/images/svg/cart.svg" alt="" /><span
+                              >Add To Card</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <span
+                      ><img
+                        class="ms-1"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
+                        alt="img"
+                        style="width: 100px"
+                    /></span>
+                    <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+                      GemStone
+                    </h4>
+                    <span class="price ms-1"
+                      >$20 <del>$80</del
+                      ><span class="as_orange">(60% off)</span></span
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+                  <div
+                    class="card as_product_box"
+                    style="border: none; background-color: rgb(10 44 78)"
+                  >
+                    <div class="as_product_img">
+                      <img
+                        class="card-img"
+                        src="https://wallpaper.dog/large/5503433.jpg"
+                        alt="Card image"
+                        style="height: 342px; border: none"
+                      />
+                      <ul>
+                        <li>
+                          <a
+                            href="cart.html"
+                            tabindex="-1"
+                            class="text-decoration-none text-white"
+                            ><img src="assets/images/svg/cart.svg" alt="" /><span
+                              >Add To Card</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <span
+                      ><img
+                        class="ms-1"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
+                        alt="img"
+                        style="width: 100px"
+                    /></span>
+                    <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+                      GemStone
+                    </h4>
+                    <span class="price ms-1"
+                      >$20 <del>$80</del
+                      ><span class="as_orange">(60% off)</span></span
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+                  <div
+                    class="card as_product_box"
+                    style="border: none; background-color: rgb(10 44 78)"
+                  >
+                    <div class="as_product_img">
+                      <img
+                        class="card-img"
+                        src="https://wallpaper.dog/large/5503433.jpg"
+                        alt="Card image"
+                        style="height: 342px; border: none"
+                      />
+                      <ul>
+                        <li>
+                          <a
+                            href="cart.html"
+                            tabindex="-1"
+                            class="text-decoration-none text-white"
+                            ><img src="assets/images/svg/cart.svg" alt="" /><span
+                              >Add To Card</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <span
+                      ><img
+                        class="ms-1"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
+                        alt="img"
+                        style="width: 100px"
+                    /></span>
+                    <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+                      GemStone
+                    </h4>
+                    <span class="price ms-1"
+                      >$20 <del>$80</del
+                      ><span class="as_orange">(60% off)</span></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row p-5">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+                  <div
+                    class="card as_product_box"
+                    style="border: none; background-color: rgb(10 44 78)"
+                  >
+                    <div class="as_product_img">
+                      <img
+                        class="card-img"
+                        src="https://wallpaper.dog/large/5503433.jpg"
+                        alt="Card image"
+                        style="height: 342px; border: none"
+                      />
+                      <ul>
+                        <li>
+                          <a
+                            href="cart.html"
+                            tabindex="-1"
+                            class="text-decoration-none text-white"
+                            ><img src="assets/images/svg/cart.svg" alt="" /><span
+                              >Add To Card</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <span
+                      ><img
+                        class="ms-1"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
+                        alt="img"
+                        style="width: 100px"
+                    /></span>
+                    <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+                      GemStone
+                    </h4>
+                    <span class="price ms-1"
+                      >$20 <del>$80</del
+                      ><span class="as_orange">(60% off)</span></span
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+                  <div
+                    class="card as_product_box"
+                    style="border: none; background-color: rgb(10 44 78)"
+                  >
+                    <div class="as_product_img">
+                      <img
+                        class="card-img"
+                        src="https://wallpaper.dog/large/5503433.jpg"
+                        alt="Card image"
+                        style="height: 342px; border: none"
+                      />
+                      <ul>
+                        <li>
+                          <a
+                            href="cart.html"
+                            tabindex="-1"
+                            class="text-decoration-none text-white"
+                            ><img src="assets/images/svg/cart.svg" alt="" /><span
+                              >Add To Card</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <span
+                      ><img
+                        class="ms-1"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
+                        alt="img"
+                        style="width: 100px"
+                    /></span>
+                    <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+                      GemStone
+                    </h4>
+                    <span class="price ms-1"
+                      >$20 <del>$80</del
+                      ><span class="as_orange">(60% off)</span></span
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+                  <div
+                    class="card as_product_box"
+                    style="border: none; background-color: rgb(10 44 78)"
+                  >
+                    <div class="as_product_img">
+                      <img
+                        class="card-img"
+                        src="https://wallpaper.dog/large/5503433.jpg"
+                        alt="Card image"
+                        style="height: 342px; border: none"
+                      />
+                      <ul>
+                        <li>
+                          <a
+                            href="cart.html"
+                            tabindex="-1"
+                            class="text-decoration-none text-white"
+                            ><img src="assets/images/svg/cart.svg" alt="" /><span
+                              >Add To Card</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <span
+                      ><img
+                        class="ms-1"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
+                        alt="img"
+                        style="width: 100px"
+                    /></span>
+                    <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+                      GemStone
+                    </h4>
+                    <span class="price ms-1"
+                      >$20 <del>$80</del
+                      ><span class="as_orange">(60% off)</span></span
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 p-3">
+                  <div
+                    class="card as_product_box"
+                    style="border: none; background-color: rgb(10 44 78)"
+                  >
+                    <div class="as_product_img">
+                      <img
+                        class="card-img"
+                        src="https://wallpaper.dog/large/5503433.jpg"
+                        alt="Card image"
+                        style="height: 342px; border: none"
+                      />
+                      <ul>
+                        <li>
+                          <a
+                            href="cart.html"
+                            tabindex="-1"
+                            class="text-decoration-none text-white"
+                            ><img src="assets/images/svg/cart.svg" alt="" /><span
+                              >Add To Card</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <span
+                      ><img
+                        class="ms-1"
+                        src="../../../../assets/images/rating2-removebg-preview.png"
+                        alt="img"
+                        style="width: 100px"
+                    /></span>
+                    <h4 class="text-white mt-1 ms-1" style="font-weight: 400">
+                      GemStone
+                    </h4>
+                    <span class="price ms-1"
+                      >$20 <del>$80</del
+                      ><span class="as_orange">(60% off)</span></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
