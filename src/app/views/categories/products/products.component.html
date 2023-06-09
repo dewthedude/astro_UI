@@ -1,6 +1,4 @@
-
-
-<app-pageloader *ngIf="isLoading" ></app-pageloader>
+<app-pageloader *ngIf="isLoading"></app-pageloader>
 <div class="card">
     <div class="card-body m-3">
         <form [formGroup]="productForm" (ngSubmit)="productSubmit()">
@@ -168,8 +166,8 @@
             <div class="container">
                 <div class="row mt-3">
                     <div class="col-lg-3">
-                        <button type="submit" [disabled]="Disabled" class="btn btn-primary"><i class="fa fa-cart-arrow-down"
-                                aria-hidden="true"></i>
+                        <button type="submit" [disabled]="Disabled" class="btn btn-primary"><i
+                                class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                             Upload Product</button>
                     </div>
                 </div>
@@ -205,13 +203,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let x of productsList index as i" >
+                <tr *ngFor="let x of productsList index as i">
                     <th scope="row">{{i + 1}}</th>
                     <td>{{x.name}}</td>
                     <td>{{x.categoryName}}</td>
                     <td>{{x.subCategoryName}}</td>
-                    <!-- <td>{{x.icon}}</td> -->
-                    <td> {{x.description}}</td>
+                    <td>
+                        <div class="descriptionwrap custom-tooltip tooltip-inner mycolor" placement="top"
+                            ngbTooltip="{{x.description}}">{{x.description}}
+                        </div>
+                    </td>
                     <td>{{x.price}}</td>
                     <td>{{x.discount}}</td>
                     <td>{{x.discountPrice}}</td>

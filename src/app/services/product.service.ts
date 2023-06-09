@@ -35,6 +35,10 @@ export class ProductService {
   activateProduct(id:any)
   {
     debugger
-    return this.http.get(`${environment.AppConfig.URLs.AstroAPI}/api/Product/${id}/product`);
+    return this.http.patch(`${environment.AppConfig.URLs.AstroAPI}/api/Product/${id}/product`,id);
+  }
+  deleteProduct(id :any)
+  {
+    return this.http.delete(`${environment.AppConfig.URLs.AstroAPI}/api/Product/${id}/remove`,id)
   }
 }

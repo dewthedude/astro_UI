@@ -11,6 +11,12 @@ import { LayoutComponent } from './layout/layout.component';
 import { PlanComponent } from './plan/plan.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactusComponent } from './contactus/contactus.component';
+import { FormsModule } from '@angular/forms';
+
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { FooterComponent } from './footer/footer.component';
+import { UserProductComponent } from './user-product/user-product.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
@@ -19,6 +25,10 @@ import { ContactusComponent } from './contactus/contactus.component';
     LayoutComponent,
     PlanComponent,
     ContactusComponent,
+    ProductdetailsComponent,
+    FooterComponent,
+    UserProductComponent,
+    AboutusComponent,
     
   ],
   imports: [
@@ -27,7 +37,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgbCarouselModule,
-    NgbAccordionModule
+    NgbAccordionModule,
+    FormsModule
   ]
 })
 export class UserModule { }
